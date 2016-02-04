@@ -29,6 +29,21 @@ Rails.application.routes.draw do
   get "/about" => "home#about"
 
   get "/home" => "home#index"
+
+  # TO CREATE A NEW POST
+  get "/posts/new" => "posts#new", as: :new_posts
+  post "/posts" => "posts#create", as: :posts
+
+  # TO LIST ALL POSTS
+  get "/posts/:id" => "posts#show", as: :post
+  get "/posts" => "posts#index"
+
+  # TO EDIT or UPDATE A POST
+  get "/posts/:id/edit" => "posts#edit", as: :edit_post
+  patch "/posts/:id" => "posts#update"
+  delete "/posts/:id" => "posts#destroy"
+
+
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales

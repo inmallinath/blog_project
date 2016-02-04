@@ -1,0 +1,43 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  background-color: rgb(8, 120, 175);
+}
+
+h1{
+  font-family: cursive;
+  font-size: 36px;
+  font-weight: bolder;
+}
+
+#post_title{
+  width: 450px;
+  border-radius: 8px;
+  height: 25px;
+  font-weight: bolder;
+}
+
+#post_body{
+  width: 450px;
+  margin-top: 40px;
+  height: 80px;
+  font-weight: bolder;
+  border-radius: 8px;
+}
+
+input {
+  //display: inline-block;
+  margin-top: 40px;
+  width: 160px;
+  font-size: 12px;
+  font-weight: bolder;
+}
+
+label {
+  margin-right: 30px;
+  font-family: cursive;
+  font-size: 26px;
+  color: rgb(4, 13, 59);
+  font-weight: bolder;
+}

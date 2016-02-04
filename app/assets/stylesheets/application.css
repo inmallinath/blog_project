@@ -13,3 +13,37 @@
  *= require_tree .
  *= require_self
  */
+ body{
+   background-color: rgb(8, 120, 175);
+ }
+
+ h1{
+   font-family: cursive;
+   font-size: 36px;
+   font-weight: bolder;
+ }
+
+ a{
+   font-family: fantasy;
+   font-size: 14px;
+   font-weight: bolder;
+ }
+
+ a:link {
+    color: rgb(77, 7, 0);
+}
+
+/* visited link */
+a:visited {
+    color: rgb(255, 161, 136)
+}
+
+/* mouse over link */
+a:hover {
+    color: yellow;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
