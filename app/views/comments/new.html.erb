@@ -1,0 +1,12 @@
+<h1> Add a new comment to the Blog Post</h1>
+
+<%= form_for @comment do |f| %>
+<div>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+</div>
+
+<div>
+  <%= f.submit %>
+</div>
+<%end%>

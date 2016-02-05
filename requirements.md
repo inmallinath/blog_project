@@ -62,3 +62,18 @@ Submit the Github link.
 ##### Do this in two ways:
 * 1- Without using a gem, build it from scratch.
 * 2- Using a gem.
+
+### Assignment: [Blog] Write Tests for the Blog Post model Next Module
+
+Write tests for your `Post` model in your Blog project.  Add tests for the following:
+
+* Validation of the presence of Post's title
+* Validation of the minimum length of Post's title (7 characters)
+* Validation of the presence of Post's body
+* Test drive a method `body_snippet` method that returns a maximum of a 100 characters with "..." of the body if it's more than a 100 characters long.
+
+### Assignment: [Blog] Write tests for controller actions Next Module
+
+* Write tests for the Blog Posts controller actions: new / create / show / index
+* Stretch 1: Also write tests for the edit / update / destroy actions
+* Stretch 2: Do the above in TDD style

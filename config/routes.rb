@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -43,6 +43,18 @@ Rails.application.routes.draw do
   patch "/posts/:id" => "posts#update"
   delete "/posts/:id" => "posts#destroy"
 
+  # TO CREATE A NEW COMMENT
+  get "/comments/new" => "comments#new", as: :new_comments
+  post "/comments" => "comments#create", as: :comments
+
+  # TO LIST ALL COMMENTS
+  get "/comments/:id" => "comments#show", as: :comment
+  get "/comments" => "comments#index"
+
+  # TO EDIT OR UPDATE A COMMENT
+  get "/comments/:id/edit" => "comments#edit", as: :edit_comment
+  patch "/comments/:id" => "comments#update"
+  delete "/comments/:id" => "comments#destroy"
 
   # Example resource route with sub-resources:
   #   resources :products do

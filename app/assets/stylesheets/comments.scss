@@ -1,3 +1,10 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#comment_body{
+  width: 450px;
+  margin-top: 40px;
+  height: 80px;
+  font-weight: bolder;
+  border-radius: 8px;
+}
