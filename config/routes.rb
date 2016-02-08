@@ -30,6 +30,11 @@ Rails.application.routes.draw do
 
   get "/home" => "home#index"
 
+  # ADDED TODAY
+  # TO SEARCH A POST BY EITHER A TITLE OR BODY
+  get "/posts/search" => "posts#search", as: :search_posts
+  # END OF CODE
+
   # TO CREATE A NEW POST
   get "/posts/new" => "posts#new", as: :new_posts
   post "/posts" => "posts#create", as: :posts
@@ -42,6 +47,8 @@ Rails.application.routes.draw do
   get "/posts/:id/edit" => "posts#edit", as: :edit_post
   patch "/posts/:id" => "posts#update"
   delete "/posts/:id" => "posts#destroy"
+
+
 
   # TO CREATE A NEW COMMENT
   get "/comments/new" => "comments#new", as: :new_comments

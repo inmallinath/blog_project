@@ -1,5 +1,15 @@
 class PostsController < ApplicationController
 
+  # ADDED TODAY
+  def search
+    if params[:search]
+      @posts = Post.search(params[:search]).order("created_at DESC")
+    else
+      @posts = Post.order("created_at DESC")
+    end
+  end
+  # END OF CODE
+
   def new
     @post = Post.new
   end
@@ -19,7 +29,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    # @posts = Post.all
+    @posts = Post.paginate(page: params[:page], :per_page => 10)
   end
 
   def edit

@@ -1,6 +1,10 @@
 <h1> All Posts (<%= @posts.length %>) </h1>
 
+<%= will_paginate @posts%>
+
 <% @posts.each do |post| %>
   <%= link_to post.title, post_path(post) %>
   <hr>
 <%end%>
+
+<%= will_paginate @posts%>
