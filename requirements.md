@@ -77,3 +77,13 @@ Write tests for your `Post` model in your Blog project.  Add tests for the follo
 * Write tests for the Blog Posts controller actions: new / create / show / index
 * Stretch 1: Also write tests for the edit / update / destroy actions
 * Stretch 2: Do the above in TDD style
+
+### Practice Git Pull Requests by doing the following:
+
+* In your Blog project create a new branch.
+* Add a simple feature to your project. It can be as simple as changing the colour of text.
+* Push your branch to Github.
+* Make a pull request from your new branch to the master branch.
+* Ask a friend or TA to review your Pull Request.
+* Merge your Pull Request on Github.
+* Pull the latest master to your computer and verify that the code you added on the new branch is there.

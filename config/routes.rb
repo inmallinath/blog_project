@@ -63,6 +63,27 @@ Rails.application.routes.draw do
   patch "/comments/:id" => "comments#update"
   delete "/comments/:id" => "comments#destroy"
 
+
+# ADDED TODAY
+resources :posts do
+  get :search, on: :collection
+  patch :mark_done, on: :member
+  post :approve
+
+  # By defining `resources :answers` nested outside `resources :questions`
+  # Rails will define all the answers routes prepended with
+  # '/questions/:question_id'. This enables us to have the question_id handy
+  # so we can create the answer associated with `question_id`
+  resources :comments, only: [:create, :destroy]
+end
+
+
+
+
+
+
+
+
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales

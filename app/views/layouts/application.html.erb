@@ -12,9 +12,10 @@
 <a href="/about">About</a> |
 <%= link_to "New Post", new_posts_path %> |
 <%= link_to "All Posts", posts_path %>  |
-<%= link_to "New Comment", new_comments_path %> |
-<%= link_to "All Comments", comments_path %> |
+<!-- <%= link_to "New Comment", new_comments_path %> |
+<%= link_to "All Comments", comments_path %> | -->
 <%= link_to "Search Posts", search_posts_path %>
+<%= notice || alert %>
 <%= yield %>
 <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 <!-- <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> -->

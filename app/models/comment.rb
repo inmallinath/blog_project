@@ -1,5 +1,5 @@
 class Comment < ActiveRecord::Base
+  belongs_to :post
   validates :body, presence: true,
-                  uniqueness: {case_sensitive: false},
-                  length: {minimum: 1, maximum: 255}
+                  uniqueness: {case_sensitive: false}
 end

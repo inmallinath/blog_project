@@ -1,5 +1,6 @@
 # REQUIREMENT * Post: title(required & unique), body
 class Post < ActiveRecord::Base
+  has_many :comments, dependent: :destroy
   # attr_accessor :title, :body
 
   validates :title, presence: true,

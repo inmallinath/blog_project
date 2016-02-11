@@ -8,3 +8,26 @@
             post_path(@post),
             method: :delete,
             data: { confirm: "Are you sure you want to delete this post?" } %>
+
+
+<p> Add a comment for this post</p>
+<hr />
+
+<%= form_for [@post, @comment] do |f|%>
+<div>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+</div>
+<%= f.submit %>
+<%end%>
+
+<% @post.comments.each do |comment| %>
+<p>
+  <%= comment.body%>
+</p>
+created on <%= comment.created_at.strftime("%d %b %Y")%>
+<%= link_to "Delete", post_comment_path(@post, comment),
+                      method: :delete,
+                      data: {confirm: "Are you sure?"}%>
+<hr />
+<%end%>
