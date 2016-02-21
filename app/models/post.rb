@@ -2,11 +2,11 @@
 class Post < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   # attr_accessor :title, :body
-
+  belongs_to :user
   validates :title, presence: true,
                     uniqueness: { case_sensitive: false},
-                    length: {minimum: 1, maximum: 255}
-  # validates :body, presence: true,
+                    length: {minimum: 7, maximum: 255}
+  validates :body, presence: true
   #                  uniqueness: { case_sensitive: false},
   scope :search, lambda {|query|
                     where (["title || body ILIKE ?", "%#{query}%"])}

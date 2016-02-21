@@ -87,3 +87,40 @@ Write tests for your `Post` model in your Blog project.  Add tests for the follo
 * Ask a friend or TA to review your Pull Request.
 * Merge your Pull Request on Github.
 * Pull the latest master to your computer and verify that the code you added on the new branch is there.
+
+### Assignment: [Blog] Add and upgrade tests with user authentication Next Module
+
+Upgrade the specs you've written for your Blog project to take into consideration user authentication by doing the following:
+
+* Preventing non-signed in users from creating, updating or deleting posts
+* Associating posts with logged in users
+* Preventing logged in users from updating or deleting posts they did not create
+
+### Assignment: [Blog] Favouritng Posts Next Module
+
+* Logged in users should be able to favourite a post.
+* Then there should a be a link at the top right near their name where they can few the list of their favourite posts.
+
+### Assignment: [Blog] Add Emailing Next Module
+
+* Setup mailing with your Blog.
+* Add a mailer that emails the user who created the blog post when someone comments on their post.
+
+### Assignment: [Blog] Move to the Background Next Module
+
+Do the following for your Blog:
+* Setup Delayed Job
+* Move all the mailers to the background
+* [Stretch 1] Setup an ActiveJob class task that does the following:
+
+* Make a summary (list) of all newly created comments that that day for posts
+* Send an email with the summary to posts owners
+* Build a Rake task to queue the job
+* [Stretch 2] Setup an ActiveJob class that does the following:
+
+* Make a list of the 10 most commented on blog posts during the last month
+* Send an email to the admin with the list of blog posts with links to them
+* Build a Rake task to queue the job
+> Note: you don't have to set up automatic invoking to the rake task as part of this assignment, just run it manually and make sure it works. If you're curious on how this can be set up in production you can take a look at the following:
+https://en.wikipedia.org/wiki/Cron
+https://github.com/javan/whenever

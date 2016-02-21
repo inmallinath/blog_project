@@ -1,10 +1,10 @@
-<h1> All Posts (<%= @posts.length %>) </h1>
-
-<%= will_paginate @posts%>
+<h1> All Posts <span class="badge"><%= Post.all.length %></span></h1>
 
 <% @posts.each do |post| %>
   <%= link_to post.title, post_path(post) %>
   <hr>
 <%end%>
 
-<%= will_paginate @posts%>
+<div id="paginate">
+  <%= will_paginate @posts%>
+</div>

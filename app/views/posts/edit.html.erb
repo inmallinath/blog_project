@@ -1,18 +1,2 @@
 <h1>Edit a Post</h1>
-
-<%= form_for @post do |f| %>
-<%# we call `f` the form object %>
-<div>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-</div>
-
-<div>
-  <%= f.label :body %>
-  <%= f.text_area :body%>
-</div>
-
-<div>
-  <%= f.submit %>
-</div>
-<%end%>
+<%= render "form"%>

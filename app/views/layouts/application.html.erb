@@ -5,19 +5,49 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-
 </head>
 <body>
-<a href="/home">Home</a> |
-<a href="/about">About</a> |
-<%= link_to "New Post", new_posts_path %> |
-<%= link_to "All Posts", posts_path %>  |
-<!-- <%= link_to "New Comment", new_comments_path %> |
-<%= link_to "All Comments", comments_path %> | -->
-<%= link_to "Search Posts", search_posts_path %>
-<%= notice || alert %>
-<%= yield %>
-<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-<!-- <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top"> <!-- navbar-inverse for a black top bar-->
+  <div class="container" >
+      <a class="navbar-brand navbar-left" href="/home">My Blog</a>
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="/about">About</a></li>
+          <li><%= link_to "New Post", new_posts_path %> </li>
+          <li><%= link_to "All Posts", posts_path %></li>
+        </ul>
+        <%= form_tag(posts_path, :method => "get", :class => 'navbar-form navbar-left') do %>
+        <div class="form-group">
+          <li>
+            <%= text_field_tag(:search, params[:search], placeholder: "Search for a post", :size => 50)%>
+        </div>
+            <button class="btn btn-default" type="submit">&#128269;</button>
+          </li>
+        <%end%>
+        <ul class="nav navbar-nav navbar-right">
+          <%if user_signed_in? %>
+            Hello <%= current_user.first_name %>!
+            <li><%= link_to "Sign Out", sessions_path, method: :delete %></li>
+          <%else%>
+            <li><%= link_to "Sign In", new_session_path %></li>
+            <li><%= link_to "Sign Up", new_user_path %></li>
+          <%end%>
+        </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <% flash.each do |name, msg|%>
+  <div class="alert alert-<%= name==:notice ? "success" : "error"%>">
+    <a class="close" data-dismiss="alert">X</a>
+    <%= msg%>
+  </div>
+  <% end %>
+</div>
+
+<div class="container">
+  <%= yield %>
+</div>
+
 </body>
 </html>

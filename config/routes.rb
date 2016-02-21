@@ -78,12 +78,11 @@ resources :posts do
 end
 
 
-
-
-
-
-
-
+# RESOUCE for users controller actions
+resources :users, only: [:new, :create]
+resources :sessions, only: [:new, :create] do
+  delete :destroy, on: :collection
+end
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
