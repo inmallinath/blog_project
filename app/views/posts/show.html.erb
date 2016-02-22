@@ -1,33 +1,56 @@
-<h1><%= @post.title %></h1>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= @post.title %></h3>
+  </div>
+  <div class="panel-body">
+    <p><%= @post.body %></p>
+  </div>
 
-<p><%= @post.body %></p>
+  <ul class="list-group">
+    <li class="list-group-item">Posted under Category: <%= @post.category_name%></li>
+  </ul>
+  <div class="panel-footer">This post was created by <%= @post.user_full_name%> on <%= @post.created_at.strftime("%d %b %Y")%></div>
+</div>
 
-<%= link_to "Edit", edit_post_path(@post) %>
-
+<% if can? :edit, @post %>
+<%= link_to "Edit", edit_post_path(@post), :class=>"btn btn-primary", :role=>"button" %>
+<%end%>
+<% if can? :destroy, @post %>
 <%= link_to "Delete",
             post_path(@post),
             method: :delete,
-            data: { confirm: "Are you sure you want to delete this post?" } %>
-
-
-<p> Add a comment for this post</p>
-<hr />
-
-<%= form_for [@post, @comment] do |f|%>
-<div>
-    <%= f.label :comments %>
-    <%= f.text_area :body %>
-</div>
-<%= f.submit %>
+            data: { confirm: "Are you sure you want to delete this post?" }, :class=>"btn btn-primary", :role=>"button" %>
 <%end%>
 
-<% @post.comments.each do |comment| %>
-<p>
-  <%= comment.body%>
-</p>
-created on <%= comment.created_at.strftime("%d %b %Y")%>
-<%= link_to "Delete", post_comment_path(@post, comment),
-                      method: :delete,
-                      data: {confirm: "Are you sure?"}%>
+<div class="page-header">
+  <h3>Add a comment for this post. <small> Please note that the admin may remove any inappropriate content!! </small></h3>
+</div>
+
+<%= form_for [@post, @comment], :html => {:class => 'form-horizontal'} do |f|%>
+<div class="form-group">
+  <%= f.label :comments, class: "control-label col-sm-2" %>
+  <div class="col-sm-10">
+    <%= f.text_area :body, rows: 8, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+    <%= f.submit nil, class: "btn btn-primary" %>
+  </div>
+</div>
+<%end%>
 <hr />
+
+<% @post.comments.each do |comment| %>
+<div class="panel panel-default">
+  <!-- <div class="panel-heading">Comments from Users</div> -->
+  <div class="panel-body">
+    <%= comment.body%>
+  </div>
+  <div class="panel-footer">This comment was posted by <%=comment.user_full_name%> on <%= comment.created_at.strftime("%d %b %Y")%></div>
+  <%= link_to "Delete", post_comment_path(@post, comment),
+                        method: :delete,
+                        data: {confirm: "Are you sure?"}, :class=>"btn btn-primary", :role=>"button"%>
+  <br />
+</div>
 <%end%>

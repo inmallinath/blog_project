@@ -1,8 +1,8 @@
-# REQUIREMENT * Post: title(required & unique), body
 class Post < ActiveRecord::Base
   has_many :comments, dependent: :destroy
-  # attr_accessor :title, :body
+  belongs_to :category
   belongs_to :user
+
   validates :title, presence: true,
                     uniqueness: { case_sensitive: false},
                     length: {minimum: 7, maximum: 255}
@@ -11,13 +11,12 @@ class Post < ActiveRecord::Base
   scope :search, lambda {|query|
                     where (["title || body ILIKE ?", "%#{query}%"])}
 
-  def self.next(number=5)
-    order("title").offset(number).limit(number)
+  def category_name
+    category.title if category
   end
 
-  # scope :lessthan10?, lambda { count < 10 }
-  def self.lessthan10?
-    count < 10
+  def user_full_name
+    user.full_name if user
   end
 
 end

@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_path, notice: "User Created!"
     else
+      flash.now[:alert] = "User was not created"
       render :new
     end
   end

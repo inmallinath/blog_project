@@ -1,8 +1,13 @@
 <h1> All Posts <span class="badge"><%= Post.all.length %></span></h1>
 
 <% @posts.each do |post| %>
-  <%= link_to post.title, post_path(post) %>
-  <hr>
+<div class="list-group">
+  <h5>
+    <%= link_to post.title, post_path(post), class: "list-group-item-heading list-group-item active" %>
+    <p class="list-group-item-text"><%=truncate(post.body, length: 50)%></p>
+  </h5>
+
+</div>
 <%end%>
 
 <div id="paginate">

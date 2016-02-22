@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  */
- h1{
-   padding-top: -50px;
-   margin-top: 50px;
+ body {
+   padding-top: 80px;
  }

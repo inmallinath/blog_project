@@ -5,11 +5,15 @@ class ApplicationController < ActionController::Base
 
   def user_signed_in?
     session[:user_id].present?
+    # ADDED the BELOW CODE FOR AUTH TOKEN - REMEMBER ME FUNCTIONALITY
+      # cookies[:auth_token].present?
+    # END OF CODE
   end
   helper_method :user_signed_in?
 
   def current_user
-    @current_user ||= User.find(session[:user_id])
+    @current_user ||= User.find_by_id(session[:user_id])
+    #@current_user ||= User.find_by_auth_token!(cookies[:auth_token]) if cookies[:auth_token]
   end
   helper_method :current_user
 
@@ -17,5 +21,12 @@ class ApplicationController < ActionController::Base
     session[:user_id] = user.id
   end
 
+  # def sign_in_token(user)
+  #   cookies.permanent[:auth_token] = user.auth_token
+  # end
+
+  def authenticate_user
+    redirect_to new_session_path, notice: "Please sign in!" unless user_signed_in?
+  end
 
 end
