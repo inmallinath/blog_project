@@ -10,6 +10,12 @@
     <li class="list-group-item">Posted under Category: <%= @post.category_name%></li>
   </ul>
   <div class="panel-footer">This post was created by <%= @post.user_full_name%> on <%= @post.created_at.strftime("%d %b %Y")%></div>
+
+  <div id="favorite-post">
+    <%= render "/favorites/favorite_post"%>
+  </div>
+  <!-- <hr /> -->
+
 </div>
 
 <% if can? :edit, @post %>

@@ -34,7 +34,12 @@ gem 'bcrypt', '~> 3.1.7'
 
 # for Authorization
 gem 'cancancan'
+gem "font-awesome-rails"
+gem 'delayed_job_active_record'
+gem "delayed_job_web"
 
+gem "letter_opener", :group => :development
+gem "quiet_assets"
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -51,6 +56,7 @@ group :development, :test do
   gem "hirb"
   gem 'will_paginate'
   gem 'bootstrap-will_paginate'
+  gem "rails-erd"
 end
 
 group :development do

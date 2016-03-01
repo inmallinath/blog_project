@@ -1,7 +1,16 @@
 <div class="jumbotron">
   <div class= "container">
+    
   <h1>Welcome to my Blog Application</h1>
-  <p> This Web app was developed as part of the curriculum in the bootcamp. The front end is responsive and uses bootstrap. Server scripts were coded with Ruby on Rails and the data is served by Postgresql. You may sign up and start blogging or else take a look at some of the posts logged by users. I hope you return to check posts and then log in your own!!</p>
-  <p><%= button_to "All Posts", posts_path, method: :get, :class=>'btn btn-primary btn-lg'%></p>
+
+  <br />
+  <p class="text-justify"> This Web app was developed as part of the curriculum in the Code Core &copy; Web Developer bootcamp. The front end for this blog application is responsive and uses bootstrap. Server scripts were coded with Ruby on Rails and the data is served by Postgresql. You may sign up and start blogging or else take a look at some of the posts logged by users. I hope you return to check posts and then post some of your own!!</p>
+
+  <p class="text-justify">
+    The objective of this project was to ensure that we receive a full stack knowledge on producing web applications. The project utilizes knowledge on CRUD operations with one-to-many and many-to-many associations. Authentication and authorization of users to access certain parts of the application have all been implemented. Test Driven Development using RSpec, mailer integration, setting up of background job task are some of the other features of the project.
+  </p>
+
+  <br />
+  <p><%= link_to "Sign In to post", new_session_path, method: :get, :class=>'btn btn-primary btn-lg'%></p>
 </div>
 </div>

@@ -12,13 +12,19 @@
 <nav class="navbar navbar-light navbar-fixed-top" style="background-color: #e3f2fd;"> <!-- navbar-inverse for a black top bar-->
   <div class="navbar-inner"
     <div class="container" >
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">
+          <img alt="Brand" src="/assets/logo.png" style="max-width:100px; margin-top: -14px;">
+        </a>
+      </div>
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         </a>
-        <a class="navbar-brand navbar-left" href="/home">My Blog</a>
-        <div class="nav-collapse">
+
+        <!-- <a class="navbar-brand navbar-left" href="/home">My Blog</a> -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
           <ul class="nav navbar-nav navbar-left nav-collapse">
             <li><a href="/about">About</a></li>
@@ -26,15 +32,25 @@
             <li><%= link_to "All Posts", posts_path %></li>
           </ul>
           <%= form_tag(posts_path, :method => "get", :class => 'navbar-form navbar-left') do %>
-          <div class="form-group">
-              <%= text_field_tag(:search, params[:search], placeholder: "Search for a post", :size => 50)%>
-          </div>
-              <button class="btn btn-default" type="submit">&#128269;</button>
+            <div class="form-group">
+                <%= text_field_tag(:search, params[:search], placeholder: "Search for a post", :size => 100)%>
+            </div>
+                <button class="btn btn-default" type="submit">&#128269;</button>
           <%end%>
+
           <ul class="nav navbar-nav navbar-right nav-collapse">
             <%if user_signed_in? %>
-              Hello <%= current_user.first_name %>!
-              <li><%= link_to "Sign Out", sessions_path, method: :delete %></li>
+              <p class="navbar-text">Signed in as
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.first_name%> <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><span class="glyphicon glyphicon-heart" aria-hidden="true"> <%= link_to "My Favorites", favorites_path%></span></li>
+                    <li><span class="glyphicon glyphicon-list" aria-hidden="true"> <%= link_to "My Posts", post_user_path(current_user)%></span></li>
+                    <li><span class="glyphicon glyphicon-user" aria-hidden="true"> <%= link_to "My Profile", user_path(current_user)%></span></li>
+                    <li><span class="glyphicon glyphicon-log-out" aria-hidden="true"> <%= link_to "Sign Out", sessions_path, method: :delete %></span></li>
+                  </ul>
+                </li>
+              </p>
             <%else%>
               <li><%= link_to "Sign In", new_session_path %></li>
               <li><%= link_to "Sign Up", new_user_path %></li>
@@ -49,6 +65,11 @@
   <% flash.each do |name, msg|%>
   <div class="alert alert-<%= name == "notice" ? "success" : "danger"%>">
     <a class="close" data-dismiss="alert">&times;</a>
+      <span class="<%= name == "notice" ? "glyphicon glyphicon-info-sign " : "glyphicon glyphicon-exclamation-sign"%>" aria-hidden="true"></span>
+    <!--role="<%#= name == "notice" ? "success" : "danger"%>" glyphicon glyphicon-info-sign
+    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+    <button type="button" class="btn btn-default navbar-btn">Sign in</button>
+  -->
     <%= msg%>
   </div>
   <% end %>
@@ -57,7 +78,12 @@
 <div class="container">
   <%= yield %>
 </div>
-
-
+<div class="navbar navbar-fixed-bottom" style="background-color: #e3f2fd;">
+<footer class="footer">
+  <div class="footcontainer">
+    <p class="text-muted" style="padding-top: 15px;">All rights reserved. Copyright-Mallinath&copy; Find me on <a href="www.linkedin.com/in/inmallinath">linked-in</a> or visit my <a href="https://github.com/inmallinath">Github</a>.   2016-2017</p>
+  </div>
+</footer>
+</div>
 </body>
 </html>

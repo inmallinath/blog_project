@@ -34,6 +34,12 @@ before_action :authorize_user, only: [:edit, :update, :destroy]
     @posts = @results.paginate(page: params[:page], :per_page => 5)
   end
 
+  def index_user
+    # @posts = Post.all
+    @results = current_user.posts.order("created_at DESC")
+    @posts = @results.paginate(page: params[:page], :per_page => 5)
+  end
+
   def edit
   end
 

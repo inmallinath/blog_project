@@ -88,6 +88,67 @@ Write tests for your `Post` model in your Blog project.  Add tests for the follo
 * Merge your Pull Request on Github.
 * Pull the latest master to your computer and verify that the code you added on the new branch is there.
 
+### Assignment: [Blog] Comments Next Module
+
+* Each post needs comments, so build a way to add comments to posts.
+* Each comment must have a "body".
+* Make sure that on the post show page you list all the comments ordered by creation date. List the most recent at the top.
+
+### Assignment: [Blog] Add Categories Next Module
+
+* Add categories to your Blog tool, make sure that you seed file creates at least 10 categories. Implement the ability to select one category from a drop down when creating a blog post.
+
+### Assignment: [Blog] ERD Next Module
+
+* Build an ERD diagram for you Blog tool for what you know about it so far. Feel free to add more features if you want. Keep in mind that the ERD may change later as you learn more about adding other features.
+
+### Assignment: [Blog] User Authentication Next Module
+
+* Add standard user authentication for your Blog. Make sure your user has first name, last name and email.
+* Associate records with the user model as per your ERD.
+
+### Assignment: [Blog] Edit User
+* Implement the ability to edit the user's first name, last name and email for your blog project. Make it so when the user clicks on his/her name they go to a page where they can edit their information.
+
+### Assignment: [Blog] Change Password
+* Implement the ability to change the password for your users on the Blog tool. The page must contain three fields: current password, new password and new password confirmation. The user must enter a correct current password and matching new password and new password confirmation. Make sure that the new password is different from the current password.
+
+### Assignment: [Blog] Deploy to Heroku Next Module
+
+* Deploy your Blog tool to production on Heroku. Get into the habit of deploying frequently. Maybe every week.
+
+### Assignment: [Blog] Permissions Next Module
+
+Enforce the following permissions in your Blog application:
+* Only signed in users can create blog posts or comments
+* Only the creator of blog posts can edit or delete them
+* Only the creator of comments or the creator of blogs can delete comments
+* Have an admin user that can do anything
+
+### Assignment: [Blog][Challenge] Forgot Password Skip Next Module
+
+* Implement a forgot password feature for your Blog application that works as follows:
+* In the sign-in page have a link called "forgot password? click here"
+* The link above should take the user to a page where they can enter their email
+* After entering their email and hitting `submit` the user should technically get an email with a link. Don't worry about sending an email now as we haven't heard that yet but make sure you have a link with a token to reset the password.
+* When the user visits the page with that link it should show three fields: new password and new password confirmation
+* To change the password the user must enter matching password
+* The user is redirected to the sign-in page to sign in with new credentials
+
+**[Stretch]: Make the reset password link expire in three days**
+
+### Assignment: [Blog][Challenge] Account locking Skip Next Module
+
+* Implement the ability to lock an account if there have been 10 failed sign in attempts to your Blog tool. After that they must use the `forgot password` feature to reset the password.
+
+### Assignment: [Blog][Challenge] Reverse Engineer `has_secure_password` Next Module
+
+* The `has_secure_password` feature is a solid one and in most circumstances you don't need to write you own or change it. For the sake of practice comment out `has_secure_password` and make sure your Blog application still works. Remember to ensure that the password gets Hashes and remember to make sure you have an `authenticate` method that works as the built-in one does. Also, make sure to have the same built-in validations.
+
+### Article: Bootstrap Blog Mark as not completed Next Module
+
+* Update your blog site using bootstrap where appropriate.
+
 ### Assignment: [Blog] Add and upgrade tests with user authentication Next Module
 
 Upgrade the specs you've written for your Blog project to take into consideration user authentication by doing the following:
@@ -124,3 +185,13 @@ Do the following for your Blog:
 > Note: you don't have to set up automatic invoking to the rake task as part of this assignment, just run it manually and make sure it works. If you're curious on how this can be set up in production you can take a look at the following:
 https://en.wikipedia.org/wiki/Cron
 https://github.com/javan/whenever
+
+### Assignment: [Blog] AJAXify favouriting posts Next Module
+
+* AJAXify favouriting and unfavouriting blog posts for your blog tool so that page doesn't reload when the use favourite or unfavourite a post.
+
+### Assignment: [Blog] AJAXify Comments creation and deletion Next Module
+
+* Make creating comments for posts use AJAX so that the page doesn't reload.
+* Make deleting a comment use AJAX
+* Stretch: Enable comment editing / Updating with AJAX

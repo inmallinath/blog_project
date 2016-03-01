@@ -1,0 +1,14 @@
+<h1> All your favorite Posts <span class="badge"><%= current_user.favored_posts.count %></span></h1>
+
+<% @favorites.each do |fav| %>
+<div class="list-group">
+  <h5>
+    <%= link_to fav.title, post_path(fav), class: "list-group-item-heading list-group-item active" %>
+    <p class="list-group-item-text"><%=truncate(fav.body, length: 50)%></p>
+  </h5>
+</div>
+<%end%>
+
+<!-- <div id="paginate">
+  <%#= will_paginate @favorites%>
+</div> -->
