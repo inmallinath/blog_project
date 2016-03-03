@@ -22,16 +22,24 @@ before_action :authorize_user, only: [:edit, :update, :destroy]
 
   def show
     @comment = Comment.new
+    respond_to do |format|
+      format.html{ render }
+      format.json{ render json: @post}
+    end
   end
 
   def index
-    # @posts = Post.all
+    @ajax_posts = Post.all
     if params[:search]
       @results = Post.search(params[:search]).order("created_at DESC")
     else
       @results = Post.order("created_at DESC")
     end
     @posts = @results.paginate(page: params[:page], :per_page => 5)
+    respond_to do |format|
+      format.html{ render }
+      format.json{ render json: @ajax_posts.select(:id, :title) }
+    end
   end
 
   def index_user

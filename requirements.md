@@ -195,3 +195,26 @@ https://github.com/javan/whenever
 * Make creating comments for posts use AJAX so that the page doesn't reload.
 * Make deleting a comment use AJAX
 * Stretch: Enable comment editing / Updating with AJAX
+
+### Assignment: [Blog] jQuery client Next Module
+
+> Build a client for your Blog project that has the following attributes:
+
+* Must be plain HTML, CSS and Javascript (with jQuery)
+* Must use AJAX to make requests
+* When you first open up the main page, it should list all blog posts (just titles)
+* When you click on a blog post the page should display the title and description of the blog post with a listing of all the comments, there should be a back button that lists all the blog posts
+* [Stretch goal 1]: Enable commenting on the post display page
+* [Stretch goal 2]: Add pagination to the posts listing page. There should "Next" and "Previous" buttons to paginate between pages.
+
+### Assignment: [Blog] Add Capybara Tests Next Module
+
+> Add the following Capybara tests to your Blog app:
+
+* Test that the home page has an `h1` with a title (you can decide on the title's text yourself)
+* Test the sign up and login systems in your application (Sign up / Sign In / Sign Out)
+* Test creating a blog post
+* Test commeting on a blog post
+* Stretches:
+* Test editing, updating and deleting posts by the owner
+* Test attempting to delete someone else's post

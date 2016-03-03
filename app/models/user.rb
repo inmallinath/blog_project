@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   has_many :favorites, dependent: :destroy
   has_many :favored_posts, through: :favorites, source: :post
 
+  before_create { generate_token(:auth_token) }
+
 # ADDED the BELOW CODE FOR AUTH TOKEN - REMEMBER ME FUNCTIONALITY
   # before_create do
   #   begin
@@ -24,4 +26,9 @@ class User < ActiveRecord::Base
     "#{first_name} #{last_name}".titleize
   end
 
+  def generate_token(column)
+    begin
+      self[column] = SecureRandom.urlsafe_base64
+    end while User.exists?(column => self[column])
+  end
 end

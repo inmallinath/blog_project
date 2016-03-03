@@ -1,0 +1,4 @@
+$('.comments').prepend('<%= j render 'comment', comment: @comment %>');
+<% @comment = Comment.new %>
+// $('#comment_body').val('');
+$('#comment-form').html('<%= j render 'form' %>');

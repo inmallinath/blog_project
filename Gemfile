@@ -40,6 +40,8 @@ gem "delayed_job_web"
 
 gem "letter_opener", :group => :development
 gem "quiet_assets"
+
+gem 'rack-cors', :require => 'rack/cors' # FOR AJAX REQUESTS
 # Use Unicorn as the app server
 # gem 'unicorn'
 

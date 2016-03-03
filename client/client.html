@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AJAX jQuery Client</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="mustache.js"></script>
+    <script src="client.js"></script>
+  </head>
+  <body>
+    <script id="post-listing" type="x-tmpl-mustache">
+      <a href = "javascript:void(0);" data-id="{{id}}">{{ title }}</a>
+      <hr />
+    </script>
+    <script id="post-details" type="x-tmpl-mustache">
+      <a href="javascript:void(0);" id="back"> &lt; Back </a>
+      <h1>{{title}}</h1>
+      <p>{{body}}</p>
+      <hr />
+      <a href="javascript:void(0);" id="post-comments" data-p-id="{{id}}">Display Comments</a>
+      <div id="comments-container"></div>
+      <hr />
+    </script>
+    <script id="comments" type="x-tmpl-mustache">
+      <p>
+        {{ body }}
+      </p>
+      <p>
+        Created on: {{ created_at }}
+      </p>
+      <hr />
+    </script>
+    <div id="posts">Loading....</div>
+    <div id="post-details-container"></div>
+  </body>
+</html>

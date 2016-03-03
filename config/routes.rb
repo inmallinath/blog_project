@@ -37,7 +37,7 @@ Rails.application.routes.draw do
   delete "/comments/:id" => "comments#destroy"
 
   resources :posts do
-    resources :comments, only: [:create, :destroy]
+    resources :comments, only: [:create, :destroy, :index]
     resources :favorites, only: [:create, :destroy]
   end
 
