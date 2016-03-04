@@ -218,3 +218,18 @@ https://github.com/javan/whenever
 * Stretches:
 * Test editing, updating and deleting posts by the owner
 * Test attempting to delete someone else's post
+
+### Assignment: [Blog] Add FriendlyId to Blog Posts
+
+* Add FriendlyId to your Blog application to the `Post` model on the `title`. Make sure to use history so that if the user enters a new title it generates a new slug but the post is still accessible with the old slug
+
+### Assignment: [Blog] Integrate SimpleForm
+
+* Integrate SimpleForm with your Blog application and convert all of your forms to use SimpleForm.
+
+### Assignment: [Blog] Add File Attachment to posts
+
+* Add a file attachment feature to your blog :
+
+* 1- Every post can have many images
+* 2- Store images with different sizes (thumb, medium, large) in addition to the original. Show the large one in the blog show page and the thumb on the listings page.
