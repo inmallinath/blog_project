@@ -52,6 +52,7 @@ before_action :authorize_user, only: [:edit, :update, :destroy]
   end
 
   def update
+    @post.slug = nil
     if @post.update post_params
       redirect_to post_path(@post), notice: "Post has been updated!"
     else
@@ -68,7 +69,7 @@ before_action :authorize_user, only: [:edit, :update, :destroy]
   private
 
   def find_post
-    @post = Post.find params[:id]
+    @post = Post.friendly.find params[:id]
   end
 
   def post_params
