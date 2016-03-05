@@ -15,10 +15,17 @@
     </div>
   </div>
 <%# ADDED the BELOW CODE FOR AUTH TOKEN - REMEMBER ME FUNCTIONALITY%>
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+<p><%= link_to "Forgotten Password?", new_password_reset_path %></p>
+</div>
+</div>
+<%#END OF CODE%>
+<%# ADDED the BELOW CODE FOR AUTH TOKEN - REMEMBER ME FUNCTIONALITY%>
   <div class="form-group">
-    <div class="col-sm-offset-0 col-sm-10">
+    <div class="col-sm-offset-2 col-sm-10">
         <%= check_box_tag :remember_me, 1, params[:remember_me]%>
-        <%=label_tag :remember_me, "Remember Me", class: "col-sm-2 control-label"%>
+        <%=label_tag :remember_me, "Remember Me", class: "control-label"%>
     </div>
   </div>
 <%#END OF CODE%>

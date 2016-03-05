@@ -4,12 +4,12 @@ class CommentsController < ApplicationController
 
   #Used for rendering JSON to jQuery Client
   def index
-    @post = Post.find params[:post_id]
+    @post = Post.friendly.find params[:post_id]
     render json: @post.comments
   end
 
   def create
-    @post = Post.find params[:post_id]
+    @post = Post.friendly.find params[:post_id]
     comment_params = params.require(:comment).permit([:body])
     @comment = Comment.new comment_params
     @comment.post = @post

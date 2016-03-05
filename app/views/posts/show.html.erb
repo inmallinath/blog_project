@@ -3,7 +3,13 @@
     <h3 class="panel-title"><%= @post.title %></h3>
   </div>
   <div class="panel-body">
-    <p><%= @post.body %></p>
+    <table class = "table">
+      <tr>
+         <td><%= image_tag @post.image.url(:medium) %></td>
+         <td text-left><%= @post.body %></td>
+      </tr>
+   </table>
+    <p></p>
   </div>
 
   <ul class="list-group">

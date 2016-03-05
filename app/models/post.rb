@@ -15,6 +15,9 @@ class Post < ActiveRecord::Base
                     length: {minimum: 7, maximum: 255}
   validates :body, presence: true
   #                  uniqueness: { case_sensitive: false},
+
+  mount_uploader :image, ImageUploader
+
   scope :search, lambda {|query|
                     where (["title || body ILIKE ?", "%#{query}%"])}
 

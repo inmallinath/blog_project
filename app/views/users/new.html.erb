@@ -8,7 +8,16 @@
   <%end%>
 <%end%>
 
-<%= form_for @user do |f| %>
+<%= simple_form_for @user do |f| %>
+  <%= f.input :first_name, label: "First Name" %>
+  <%= f.input :last_name, label: "Last Name" %>
+  <%= f.input :email, label: "E-mail" %>
+  <%= f.input :password, label: "Password" %>
+  <%= f.input :password_confirmation, label: "Confirm Password" %>
+  <%= f.submit "Sign me Up!", class: "btn btn-primary" %>
+<% end %>
+
+<!-- <%= form_for @user do |f| %>
 <div class="form-group">
   <%= f.label :first_name, class: "control-label col-sm-4" %>
   <div class="col-sm-6">
@@ -49,4 +58,4 @@
     <%= f.submit "Sign me Up!", class: "btn btn-primary" %>
   </div>
 </div>
-<%end%>
+<%end%> -->
