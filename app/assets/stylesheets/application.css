@@ -25,3 +25,8 @@
  .footcontainer{
    text-align:center;
  }
+
+ .gap-right {
+   margin-right: 30px;
+   margin-bottom: 15px; 
+ }

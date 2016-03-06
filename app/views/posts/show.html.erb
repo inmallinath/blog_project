@@ -3,12 +3,10 @@
     <h3 class="panel-title"><%= @post.title %></h3>
   </div>
   <div class="panel-body">
-    <table class = "table">
-      <tr>
-         <td><%= image_tag @post.image.url(:medium) %></td>
-         <td text-left><%= @post.body %></td>
-      </tr>
-   </table>
+    <div class="clearfix">
+      <%= image_tag @post.image.url(:medium), class: "pull-left gap-right"%>
+      <p><%= @post.body %></p>
+    </div>
     <p></p>
   </div>
 
