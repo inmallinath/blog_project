@@ -2,10 +2,18 @@
 
 <% @posts.each do |post| %>
 <div class="list-group">
-  <h5>
-    <%= link_to post.title, post_path(post), class: "list-group-item-heading list-group-item active" %>
-    <p class="list-group-item-text"><%=truncate(post.body, length: 50)%></p>
-  </h5>
+  <table class = "table">
+    <tr>
+      <td style="width:5%">
+        <%= image_tag post.image.url(:thumb)%>
+      </td>
+      <td>
+        <%= link_to post.title, post_path(post), class: "list-group-item-heading list-group-item active" %>
+          <p class="list-group-item-text"><%=truncate(post.body, length: 50)%></p>
+      </td>
+    </tr>
+ </table>
+  <p></p>
 
 </div>
 <%end%>

@@ -1,4 +1,12 @@
-<%= form_for @post, :html => {:class => 'form-horizontal'} do |f| %>
+<%= simple_form_for @post do |f| %>
+  <%= f.input :title, label: "Post Title" %>
+  <%= f.input :body, label: "Content" %>
+  <%= f.collection_select(:category_id, Category.order(:title), :id, :title, html_options = {class: "form-select"}) %>
+  <%= f.input :image %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+
+<!-- <%= form_for @post, :html => {:class => 'form-horizontal'} do |f| %>
 <%# we call `f` the form object %>
 <div class="form-group">
   <%= f.label :title, class: "control-label col-sm-2" %>
@@ -26,4 +34,4 @@
     <%= f.submit nil, class: "btn btn-primary"%>
   </div>
 </div>
-<%end%>
+<%end%> -->
