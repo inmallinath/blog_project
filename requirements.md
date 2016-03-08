@@ -233,3 +233,18 @@ https://github.com/javan/whenever
 
 * 1- Every post can have many images
 * 2- Store images with different sizes (thumb, medium, large) in addition to the original. Show the large one in the blog show page and the thumb on the listings page.
+
+### Assignment: [Blog] Add an API Skip Next Module
+
+Add an API for your Blog application that supports the following:
+* Getting a list of all the blog posts in your system
+* Getting the details of a specific blog post with its comments. Make sure that blog response contain: post tags, the number of likes and the name of the creator of the post.
+* [Stretch] Add the ability to create a blog post. Make sure to return a JSON of the errors if the post fails to save.
+
+Make sure of the following:
+* You version your API
+* You have an authentication built in so an API key is needed to use the API
+
+* [Stretch] Create an HTML page (outside of your Rails application) with jQuery as a client to test the API you created.
+
+* [Challenge] Explore different ways to handle user authentication and make sure that the user is authenticated in order to be able to create a blog post.
