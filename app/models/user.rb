@@ -38,4 +38,8 @@ class User < ActiveRecord::Base
       self[column] = SecureRandom.urlsafe_base64
     end while User.exists?(column => self[column])
   end
+
+  def generate_api_key
+    self.api_key = SecureRandom.hex(32)
+  end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160305160724) do
+ActiveRecord::Schema.define(version: 20160308030705) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -107,7 +107,10 @@ ActiveRecord::Schema.define(version: 20160305160724) do
     t.string   "auth_token"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
+    t.string   "api_key"
   end
+
+  add_index "users", ["api_key"], name: "index_users_on_api_key", using: :btree
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
