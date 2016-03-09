@@ -65,4 +65,9 @@ Rails.application.routes.draw do
   end
 
   resources :password_resets
+
+  # TWITTER INTEGRATION
+  get "/auth/twitter", as: :sign_in_with_twitter
+  get "/auth/twitter/callback" => "callbacks#twitter"
+  
 end

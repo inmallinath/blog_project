@@ -2,6 +2,10 @@
   <%= f.input :title, label: "Post Title" %>
   <%= f.input :body, label: "Content" %>
   <%= f.collection_select(:category_id, Category.order(:title), :id, :title, html_options = {class: "form-select"}) %>
+  <% if current_user.signed_in_with_twitter? %>
+    <%= f.check_box :tweet_it%>Tweet it!
+    <!-- <%#= f.label :tweet_it, "Tweet this post", :class => "checkbox inline" #%> -->
+  <% end %>
   <%= f.input :image %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>

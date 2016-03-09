@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
   extend FriendlyId
+  attr_accessor :tweet_it
+    
     friendly_id :title, use: [:slugged, :history]
 
   has_many :comments, dependent: :destroy

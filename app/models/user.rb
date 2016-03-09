@@ -20,7 +20,33 @@ class User < ActiveRecord::Base
   validates :password, length: {minimum: 6}, on: :create
   validates :email, presence: true,
                     uniqueness: true,
-                    format: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
+                    format: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i unless :from_oauth?
+  # TWITTER INTEGRATION
+  serialize :twitter_data, Hash
+
+  def from_oauth?
+    uid.present? && provider.present?
+    # auth["provider"].present? #,"uid")).first
+  end
+
+  def self.create_from_twitter(twitter_data)
+    name = twitter_data["info"]["name"].split(" ")
+    User.create(provider: "twitter", uid: twitter_data["uid"], first_name: name[0], last_name: name[1] || ".", password: SecureRandom.hex, email: twitter_data["email"] || "noemail@user.com",
+    twitter_token: twitter_data["credentials"]["token"],
+    twitter_secret: twitter_data["credentials"]["secret"],
+    twitter_raw_data: twitter_data)
+  end
+
+  def self.find_twitter_user(omniauth_data)
+    where(provider: "twitter", uid: omniauth_data["uid"]).first
+  end
+
+  def signed_in_with_twitter?
+    provider.present? && uid.present? && provider == "twitter"
+  end
+  # END OF TWITTER INTEGRATION
+
+
 
   def full_name
     "#{first_name} #{last_name}".titleize

@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
 </head>
 <body>
 
@@ -53,8 +53,13 @@
                 </li>
               </p>
             <%else%>
-              <li><%= link_to "Sign In", new_session_path %></li>
-              <li><%= link_to "Sign Up", new_user_path %></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign-In Options <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><span class="glyphicon glyphicon-log-in" aria-hidden="true"><%= link_to " Sign In", new_session_path %></span></li>
+                  <li><span class="fa fa-twitter" aria-hidden="true"><%= link_to "  Twitter Sign in", sign_in_with_twitter_path%></span></li>
+                  <li><span class="glyphicon glyphicon-edit" aria-hidden="true"><%= link_to " Sign Up", new_user_path %></span></li>
+                </ul>
             <%end%>
           </ul>
         </div>
