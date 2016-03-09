@@ -51,6 +51,13 @@ Rails.application.routes.draw do
     end
   end
 
+  # RESOURCE FOR GENERATING APIs for external apps
+  namespace :api, defaults: {format: :json} do
+    namespace :v1 do
+      resources :posts, only: [:index, :show, :create]
+    end
+  end
+
   resources :favorites, only: [:index]
 
   resources :sessions, only: [:new, :create] do

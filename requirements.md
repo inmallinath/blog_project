@@ -248,3 +248,7 @@ Make sure of the following:
 * [Stretch] Create an HTML page (outside of your Rails application) with jQuery as a client to test the API you created.
 
 * [Challenge] Explore different ways to handle user authentication and make sure that the user is authenticated in order to be able to create a blog post.
+
+### Assignment: [Blog] Integrate with Twitter OAuth Skip Next Module
+
+* Enable users to authenticate with Twitter OAuth on your Blog application. Add a checkbox for the form that creates a blog post so that when users creates a blog post, they have the option to check that checkbox to send a tweet with the title of their post along with a link to their website.
