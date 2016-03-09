@@ -12,6 +12,15 @@ before_action :authorize_user, only: [:edit, :update, :destroy]
     @post = Post.new post_params
     @post.user = current_user
     if @post.save
+      if @post.tweet_it
+        client = Twitter::REST::Client.new do |config|
+          config.consumer_key        = ENV["twitter_consumer_key"]
+          config.consumer_secret     = ENV["twitter_consumer_secret"]
+          config.access_token        = current_user.twitter_token
+          config.access_token_secret = current_user.twitter_secret
+        end
+        client.update("New Blog Post: #{@post.title.titleize}")
+      end
       flash[:notice] = "Post created successfully"
       redirect_to new_posts_path(@post), notice: "Post has been created!"
     else
@@ -73,7 +82,7 @@ before_action :authorize_user, only: [:edit, :update, :destroy]
   end
 
   def post_params
-    post_params = params.require(:post).permit([:title, :body, :category_id, :image])
+    post_params = params.require(:post).permit([:title, :body, :category_id, :image, :tweet_it])
   end
 
   def authorize_user

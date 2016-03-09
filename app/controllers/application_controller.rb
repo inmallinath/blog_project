@@ -26,7 +26,8 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_user
+    # twitter_user = User.find_by_uid params[:uid]
+    # byebug
     redirect_to new_session_path, notice: "Please sign in!" unless user_signed_in?
   end
-
 end

@@ -4,8 +4,9 @@ class SessionsController < ApplicationController
   end
 
   def create
+
     user = User.find_by_email(params[:email])
-    if user && user.authenticate(params[:password])
+    if user && user.authenticate(params[:password]) 
       # sign_in(user)
       # ADDED the BELOW CODE FOR AUTH TOKEN - REMEMBER ME FUNCTIONALITY
       if params[:remember_me]

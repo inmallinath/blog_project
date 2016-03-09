@@ -57,9 +57,15 @@ gem 'fog'
 
 gem 'active_model_serializers'
 
+# integrate twitter to blog
+gem 'omniauth-twitter'
+gem 'twitter'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'pry-rails'
   gem "rspec-rails"
   gem "factory_girl_rails"
   gem "awesome_print"
