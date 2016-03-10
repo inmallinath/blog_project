@@ -63,7 +63,7 @@ Submit the Github link.
 * 1- Without using a gem, build it from scratch.
 * 2- Using a gem.
 
-### Assignment: [Blog] Write Tests for the Blog Post model Next Module
+<!-- ### Assignment: [Blog] Write Tests for the Blog Post model Next Module
 
 Write tests for your `Post` model in your Blog project.  Add tests for the following:
 
@@ -76,7 +76,7 @@ Write tests for your `Post` model in your Blog project.  Add tests for the follo
 
 * Write tests for the Blog Posts controller actions: new / create / show / index
 * Stretch 1: Also write tests for the edit / update / destroy actions
-* Stretch 2: Do the above in TDD style
+* Stretch 2: Do the above in TDD style -->
 
 ### Practice Git Pull Requests by doing the following:
 
@@ -122,7 +122,7 @@ Write tests for your `Post` model in your Blog project.  Add tests for the follo
 Enforce the following permissions in your Blog application:
 * Only signed in users can create blog posts or comments
 * Only the creator of blog posts can edit or delete them
-* Only the creator of comments or the creator of blogs can delete comments
+<!-- * Only the creator of comments or the creator of blogs can delete comments -->
 * Have an admin user that can do anything
 
 ### Assignment: [Blog][Challenge] Forgot Password Skip Next Module
@@ -137,25 +137,25 @@ Enforce the following permissions in your Blog application:
 
 **[Stretch]: Make the reset password link expire in three days**
 
-### Assignment: [Blog][Challenge] Account locking Skip Next Module
+<!-- ### Assignment: [Blog][Challenge] Account locking Skip Next Module
 
-* Implement the ability to lock an account if there have been 10 failed sign in attempts to your Blog tool. After that they must use the `forgot password` feature to reset the password.
+* Implement the ability to lock an account if there have been 10 failed sign in attempts to your Blog tool. After that they must use the `forgot password` feature to reset the password. -->
 
-### Assignment: [Blog][Challenge] Reverse Engineer `has_secure_password` Next Module
+<!-- ### Assignment: [Blog][Challenge] Reverse Engineer `has_secure_password` Next Module
 
-* The `has_secure_password` feature is a solid one and in most circumstances you don't need to write you own or change it. For the sake of practice comment out `has_secure_password` and make sure your Blog application still works. Remember to ensure that the password gets Hashes and remember to make sure you have an `authenticate` method that works as the built-in one does. Also, make sure to have the same built-in validations.
+* The `has_secure_password` feature is a solid one and in most circumstances you don't need to write you own or change it. For the sake of practice comment out `has_secure_password` and make sure your Blog application still works. Remember to ensure that the password gets Hashes and remember to make sure you have an `authenticate` method that works as the built-in one does. Also, make sure to have the same built-in validations. -->
 
 ### Article: Bootstrap Blog Mark as not completed Next Module
 
 * Update your blog site using bootstrap where appropriate.
 
-### Assignment: [Blog] Add and upgrade tests with user authentication Next Module
+<!-- ### Assignment: [Blog] Add and upgrade tests with user authentication Next Module
 
 Upgrade the specs you've written for your Blog project to take into consideration user authentication by doing the following:
 
 * Preventing non-signed in users from creating, updating or deleting posts
 * Associating posts with logged in users
-* Preventing logged in users from updating or deleting posts they did not create
+* Preventing logged in users from updating or deleting posts they did not create -->
 
 ### Assignment: [Blog] Favouritng Posts Next Module
 
@@ -167,7 +167,7 @@ Upgrade the specs you've written for your Blog project to take into consideratio
 * Setup mailing with your Blog.
 * Add a mailer that emails the user who created the blog post when someone comments on their post.
 
-### Assignment: [Blog] Move to the Background Next Module
+<!-- ### Assignment: [Blog] Move to the Background Next Module
 
 Do the following for your Blog:
 * Setup Delayed Job
@@ -181,7 +181,7 @@ Do the following for your Blog:
 
 * Make a list of the 10 most commented on blog posts during the last month
 * Send an email to the admin with the list of blog posts with links to them
-* Build a Rake task to queue the job
+* Build a Rake task to queue the job -->
 > Note: you don't have to set up automatic invoking to the rake task as part of this assignment, just run it manually and make sure it works. If you're curious on how this can be set up in production you can take a look at the following:
 https://en.wikipedia.org/wiki/Cron
 https://github.com/javan/whenever
@@ -204,10 +204,10 @@ https://github.com/javan/whenever
 * Must use AJAX to make requests
 * When you first open up the main page, it should list all blog posts (just titles)
 * When you click on a blog post the page should display the title and description of the blog post with a listing of all the comments, there should be a back button that lists all the blog posts
-* [Stretch goal 1]: Enable commenting on the post display page
-* [Stretch goal 2]: Add pagination to the posts listing page. There should "Next" and "Previous" buttons to paginate between pages.
+<!-- * [Stretch goal 1]: Enable commenting on the post display page
+* [Stretch goal 2]: Add pagination to the posts listing page. There should "Next" and "Previous" buttons to paginate between pages. -->
 
-### Assignment: [Blog] Add Capybara Tests Next Module
+<!-- ### Assignment: [Blog] Add Capybara Tests Next Module
 
 > Add the following Capybara tests to your Blog app:
 
@@ -217,7 +217,7 @@ https://github.com/javan/whenever
 * Test commeting on a blog post
 * Stretches:
 * Test editing, updating and deleting posts by the owner
-* Test attempting to delete someone else's post
+* Test attempting to delete someone else's post -->
 
 ### Assignment: [Blog] Add FriendlyId to Blog Posts
 
@@ -252,3 +252,11 @@ Make sure of the following:
 ### Assignment: [Blog] Integrate with Twitter OAuth Skip Next Module
 
 * Enable users to authenticate with Twitter OAuth on your Blog application. Add a checkbox for the form that creates a blog post so that when users creates a blog post, they have the option to check that checkbox to send a tweet with the title of their post along with a link to their website.
+
+### Assignment: [Blog] Rebuild the first CRUD with Express.js Next Module
+
+* Build the CRUD portion of the post record in your blog application using Node.js, Express.js and MongoDB (separate from your Rails application). You can follow the same conventions as Rails in terms of URLs.
+
+* [Stretch 1] Enable commenting on the blog post
+
+* [Stretch 2] Add user authentication using the passport module
