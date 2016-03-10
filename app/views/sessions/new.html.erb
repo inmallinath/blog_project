@@ -31,8 +31,11 @@
 <%#END OF CODE%>
 
   <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
+    <div class="col-sm-offset-2 col-sm-1">
       <%= submit_tag "Sign In", class: "btn btn-primary" %>
+    </div>
+    <div class="col-sm-1">
+      <%= link_to "Twitter Sign in", sign_in_with_twitter_path, class: "btn btn-primary"%>
     </div>
   </div>
 <%end%>
