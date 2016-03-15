@@ -38,7 +38,7 @@ before_action :authorize_user, only: [:edit, :update, :destroy]
   end
 
   def index
-    @ajax_posts = Post.all
+    @ajax_posts = Post.order("created_at DESC")
     if params[:search]
       @results = Post.search(params[:search]).order("created_at DESC")
     else
