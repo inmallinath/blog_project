@@ -1,3 +1,4 @@
+require 'will_paginate/array'
 class PostsController < ApplicationController
 
 before_action :find_post, only: [:show, :edit, :update, :destroy]
