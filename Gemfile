@@ -61,6 +61,9 @@ gem 'active_model_serializers'
 gem 'omniauth-twitter'
 gem 'twitter'
 
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+
 # Deploy on Heroku
 # gem 'rails_12factor', group: :production
 
@@ -73,8 +76,6 @@ group :development, :test do
   gem "awesome_print"
   gem "interactive_editor"
   gem "hirb"
-  gem 'will_paginate'
-  gem 'bootstrap-will_paginate'
   gem "rails-erd"
 end
 
