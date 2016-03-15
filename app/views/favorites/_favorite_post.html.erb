@@ -1,5 +1,6 @@
 <%fav = @post.fav_for(current_user)%>
 <%if fav%>
+<%byebug%>
   <%= link_to fa_icon("heart"), post_favorite_path(@post, fav), method: :delete, remote: true%>
 <%else%>
   <%= link_to fa_icon("heart-o"), post_favorites_path(@post), method: :post, remote: true%>

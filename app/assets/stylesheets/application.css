@@ -41,3 +41,16 @@
 .navbar-fixed .navbar-toggle .icon-bar:hover {
   background-color: #fff; /* Changes toggle color on hover */
 }
+
+.image_holder{
+  float: right;
+  width: 120px;
+  margin: 0;
+  padding: 0px;
+  text-align: center;
+}
+
+.tagline {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 22px;
+}

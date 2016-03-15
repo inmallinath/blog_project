@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     # @user.assign_attributes user_params
     # if @user.save(validate: false)
     if @user.update_attributes user_params
-      redirect_to(root_path, {notice: "User updated!"})
+      redirect_to(posts_path, {notice: "User updated!"})
     else
       render :edit
     end
@@ -22,7 +22,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      redirect_to root_path, notice: "User Created!"
+      sign_in_token(@user)
+      redirect_to posts_path notice: "User Created!"
     else
       flash.now[:alert] = "User was not created"
       render :new
@@ -32,7 +33,7 @@ class UsersController < ApplicationController
   def update_password
     if valid_pass?
       if @user.update user_params
-        redirect_to(root_path, {notice: "Password updated!"})
+        redirect_to(posts_path, {notice: "Password updated!"})
       else
         render :edit_password
       end

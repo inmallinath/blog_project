@@ -2,7 +2,7 @@ class PostSerializer < ActiveModel::Serializer
   attributes :id, :title, :creation_date, :created_by, :category, :favorite_count
 
   has_many :comments
-  
+
   def title
     object.title.titleize
   end

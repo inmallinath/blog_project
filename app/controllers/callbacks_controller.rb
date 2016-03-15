@@ -4,6 +4,6 @@ class CallbacksController < ApplicationController
     user = User.find_twitter_user(omniauth_data)
     user ||= User.create_from_twitter(omniauth_data)
     sign_in_token(user)
-    redirect_to root_path, notice: "Signed In!"
+    redirect_to posts_path, notice: "Signed In!"
   end
 end

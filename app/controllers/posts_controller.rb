@@ -47,7 +47,7 @@ before_action :authorize_user, only: [:edit, :update, :destroy]
     @posts = @results.paginate(page: params[:page], :per_page => 5)
     respond_to do |format|
       format.html{ render }
-      format.json{ render json: @ajax_posts.select(:id, :title) }
+      format.json{ render json: @ajax_posts.select(:id, :title, :created_at, :user_id, :category_id) }
     end
   end
 

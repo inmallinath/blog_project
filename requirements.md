@@ -260,3 +260,10 @@ Make sure of the following:
 * [Stretch 1] Enable commenting on the blog post
 
 * [Stretch 2] Add user authentication using the passport module
+
+### Assignment: [Blog] Commenting with React.js Skip Next Module
+
+Convert your commenting for your Blog tool to happen in AJAX with React.js. You can do the following:
+* 1- Load the initial comments for a blog post with React.js
+* 2- Connect the new comment form to submit with AJAX through React.js (you can use jQuery AJAX library)
+* 3- Poll the server every 10 seconds for new comments and display them
