@@ -423,6 +423,7 @@ DEPENDENCIES
   factory_girl_rails
   faker (~> 1.6.1)
   fog
+  fog-aws
   font-awesome-rails
   friendly_id
   hirb
