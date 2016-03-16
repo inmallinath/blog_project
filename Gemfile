@@ -67,6 +67,9 @@ gem 'bootstrap-will_paginate'
 
 # Deploy on Heroku
 # gem 'rails_12factor', group: :production
+gem "awesome_print"
+gem "interactive_editor"
+gem "hirb"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -74,9 +77,6 @@ group :development, :test do
   gem 'pry-rails'
   gem "rspec-rails"
   gem "factory_girl_rails"
-  gem "awesome_print"
-  gem "interactive_editor"
-  gem "hirb"
   gem "rails-erd"
 end
 
